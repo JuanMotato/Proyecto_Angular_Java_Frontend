@@ -1,0 +1,32 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Personas</h3>
+        </div>
+        <div class="card-body">
+           <form [formGroup]="signupForm">
+                <div class="form-group">
+                    <label for="nombre">Nombres: </label>
+                    <input formControlName="nom" [(ngModel)]="persona.nombre" type="text" name="nombre"  class="form-control" id="nom">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellidos: </label>
+                    <input formControlName="apel" [(ngModel)]="persona.apellido" name="apellido" type="text" id="apel" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Telefono: </label>
+                    <input formControlName="tel" [(ngModel)]="persona.telefono" name="telefono" type="text" id="tel" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="documento">Documento: </label>
+                    <input formControlName="doc" [(ngModel)]="persona.documento" name="documento" type="text" id="doc" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Direccion: </label>
+                    <input formControlName="direc" [(ngModel)]="persona.direccion" name="direccion" type="text" id="direc" class="form-control">
+                </div>
+                <button [disabled]="signupForm.invalid" (click)="Guardar()" type="submit" class="btn btn-danger">Resgistrar</button>
+           </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="card">
+        <h5 class="card-header">Registro De Personas</h5>
+        <div class="card-body">
+            <form [formGroup]="signupForm">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="nombre">Nombre:</label>
+                    <input formControlName="nombre" [(ngModel)]="persona.pernombre" type="text" name="pernombre"  class="form-control" id="nombre" placeholder="Nombre">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="apellido">Apellido</label>
+                    <input formControlName="apellido" [(ngModel)]="persona.perapellido" name="perapellido"  type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="telefono">Telefono Fijo:</label>
+                      <input formControlName="telefono" [(ngModel)]="persona.pertelefonofijo" name="pertelefonofijo" type="number" class="form-control" id="telefono" placeholder="Telefono">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="cedula">Cedula:</label>
+                      <input formControlName="cedula" [(ngModel)]="persona.percedula" name="percedula" type="number" class="form-control" id="cedula" placeholder="Cedula" >
+                    </div>
+                  </div>
+      
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="fechanac">Fecha De Nacimiento:</label>
+                      <input formControlName="fechanac" type="date" 
+                      class="form-control" [(ngModel)]="persona.perfechanacimiento"
+                      name="perfechanacimiento">
+                    </div>
+                  </div>
+                  <button [disabled]="signupForm.invalid"   (click)="ConsultarYGuardarPersona();" type="submit" class="btn btn-primary">Registrar Persona</button>
+    </form>
+    <br>
+    <br>
+    <div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+      {{errorMsg}}
+    </div>
+    </div>
+    </div>
